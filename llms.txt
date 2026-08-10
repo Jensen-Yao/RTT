@@ -1,0 +1,8 @@
+# RTT
+
+RTT is a Web/PWA, Android, and Windows translation platform for live captions, screen-subtitle OCR, text translation, file translation, and independent ASR, translation, punctuation, OCR, and TTS capability profiles.
+
+- [Web workspace](https://rtt.jenseny.top/)
+- [Product overview](https://rtt.jenseny.top/product/)
+- [Model directory](https://rtt.jenseny.top/models/)
+- [Latest release](https://github.com/Jensen-Yao/RTT/releases/latest)
