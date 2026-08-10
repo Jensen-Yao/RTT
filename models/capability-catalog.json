@@ -1,0 +1,924 @@
+{
+  "$schema": "../contracts/capability-package-catalog.schema.json",
+  "catalogVersion": 2,
+  "releasePolicy": "VERIFIED packages may be offered in RTT-managed downloads. CANDIDATE and LINK_ONLY entries remain upstream links until runtime, license, checksum, and device inference are verified.",
+  "packages": [
+    {
+      "id": "vosk-en",
+      "displayName": "Vosk 英语小模型",
+      "description": "内置轻量英语流式识别；局部结果延迟低",
+      "capability": "ASR",
+      "engine": "vosk",
+      "modelFormat": "vosk-folder",
+      "version": "0.15",
+      "files": [
+        "final.mdl",
+        "conf/model.conf"
+      ],
+      "entryPoint": "final.mdl",
+      "downloadUrls": [
+        "https://github.com/Jensen-Yao/RTT/releases/download/models-v0.2.6/vosk-en.zip"
+      ],
+      "mirrors": [],
+      "sha256": "899253b2dfedec23597b93a84c5e38f744f8cab143cf819c4a8556827c331ef7",
+      "compressedBytes": 41183081,
+      "license": "Apache-2.0",
+      "redistributable": true,
+      "officialPage": "https://alphacephei.com/vosk/models",
+      "platforms": [
+        "android",
+        "windows"
+      ],
+      "minimumRuntime": "Vosk 0.3.38; Android 10+ or Windows x64",
+      "languages": [
+        "en"
+      ],
+      "targetLanguages": [],
+      "voices": [],
+      "validationRules": [
+        "sha256",
+        "archive-path-safety",
+        "requires:final.mdl",
+        "requires:conf/model.conf"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "vosk-ja",
+      "displayName": "Vosk 日语小模型",
+      "description": "内置轻量日语流式识别；局部结果延迟低",
+      "capability": "ASR",
+      "engine": "vosk",
+      "modelFormat": "vosk-folder",
+      "version": "0.22",
+      "files": [
+        "final.mdl",
+        "conf/model.conf"
+      ],
+      "entryPoint": "final.mdl",
+      "downloadUrls": [
+        "https://github.com/Jensen-Yao/RTT/releases/download/models-v0.2.6/vosk-ja.zip"
+      ],
+      "mirrors": [],
+      "sha256": "2dbed9c7bb180256c07e7c1df18449728e9e330dbd2cfcb31fc04019343d03fc",
+      "compressedBytes": 49651827,
+      "license": "Apache-2.0",
+      "redistributable": true,
+      "officialPage": "https://alphacephei.com/vosk/models",
+      "platforms": [
+        "android",
+        "windows"
+      ],
+      "minimumRuntime": "Vosk 0.3.38; Android 10+ or Windows x64",
+      "languages": [
+        "ja"
+      ],
+      "targetLanguages": [],
+      "voices": [],
+      "validationRules": [
+        "sha256",
+        "archive-path-safety",
+        "requires:final.mdl",
+        "requires:conf/model.conf"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "vosk-zh-small",
+      "displayName": "Vosk 中文小模型",
+      "description": "轻量普通话离线识别；适合低内存设备",
+      "capability": "ASR",
+      "engine": "vosk",
+      "modelFormat": "vosk-folder",
+      "version": "0.22",
+      "files": [
+        "final.mdl",
+        "conf/model.conf"
+      ],
+      "entryPoint": "final.mdl",
+      "downloadUrls": [
+        "https://alphacephei.com/vosk/models/vosk-model-small-cn-0.22.zip"
+      ],
+      "mirrors": [],
+      "sha256": "3af8b0e7e0f835ae9d414ce5df580237a3cfb08d586c9fbbb0f7ff29ad5b14ba",
+      "compressedBytes": 43898754,
+      "license": "Apache-2.0",
+      "redistributable": false,
+      "officialPage": "https://alphacephei.com/vosk/models",
+      "platforms": [
+        "android",
+        "windows"
+      ],
+      "minimumRuntime": "Vosk 0.3.38; Android 10+ or Windows x64",
+      "languages": [
+        "zh"
+      ],
+      "targetLanguages": [],
+      "voices": [],
+      "validationRules": [
+        "sha256",
+        "archive-path-safety",
+        "requires:final.mdl",
+        "requires:conf/model.conf"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "vosk-ko-small",
+      "displayName": "Vosk 韩语小模型",
+      "description": "轻量韩语离线识别；适合低内存设备",
+      "capability": "ASR",
+      "engine": "vosk",
+      "modelFormat": "vosk-folder",
+      "version": "0.22",
+      "files": [
+        "final.mdl",
+        "conf/model.conf"
+      ],
+      "entryPoint": "final.mdl",
+      "downloadUrls": [
+        "https://alphacephei.com/vosk/models/vosk-model-small-ko-0.22.zip"
+      ],
+      "mirrors": [],
+      "sha256": "eea36124087fed26c59996a4761519458e3bd185e8ea9d9865ad8760c4a1d989",
+      "compressedBytes": 86914329,
+      "license": "Apache-2.0",
+      "redistributable": false,
+      "officialPage": "https://alphacephei.com/vosk/models",
+      "platforms": [
+        "android",
+        "windows"
+      ],
+      "minimumRuntime": "Vosk 0.3.38; Android 10+ or Windows x64",
+      "languages": [
+        "ko"
+      ],
+      "targetLanguages": [],
+      "voices": [],
+      "validationRules": [
+        "sha256",
+        "archive-path-safety",
+        "requires:final.mdl",
+        "requires:conf/model.conf"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "vosk-es-small",
+      "displayName": "Vosk 西班牙语小模型",
+      "description": "轻量西班牙语离线识别；适合低内存设备",
+      "capability": "ASR",
+      "engine": "vosk",
+      "modelFormat": "vosk-folder",
+      "version": "0.42",
+      "files": [
+        "final.mdl",
+        "conf/model.conf"
+      ],
+      "entryPoint": "final.mdl",
+      "downloadUrls": [
+        "https://alphacephei.com/vosk/models/vosk-model-small-es-0.42.zip"
+      ],
+      "mirrors": [],
+      "sha256": "09b239888f633ef2f0b4e09736e3d9936acfd810bc65d53fad45261762c6511f",
+      "compressedBytes": 39817833,
+      "license": "Apache-2.0",
+      "redistributable": false,
+      "officialPage": "https://alphacephei.com/vosk/models",
+      "platforms": [
+        "android",
+        "windows"
+      ],
+      "minimumRuntime": "Vosk 0.3.38; Android 10+ or Windows x64",
+      "languages": [
+        "es"
+      ],
+      "targetLanguages": [],
+      "voices": [],
+      "validationRules": [
+        "sha256",
+        "archive-path-safety",
+        "requires:final.mdl",
+        "requires:conf/model.conf"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "vosk-fr-small",
+      "displayName": "Vosk 法语小模型",
+      "description": "轻量法语离线识别；适合低内存设备",
+      "capability": "ASR",
+      "engine": "vosk",
+      "modelFormat": "vosk-folder",
+      "version": "0.22",
+      "files": [
+        "final.mdl",
+        "conf/model.conf"
+      ],
+      "entryPoint": "final.mdl",
+      "downloadUrls": [
+        "https://alphacephei.com/vosk/models/vosk-model-small-fr-0.22.zip"
+      ],
+      "mirrors": [],
+      "sha256": "cabf6180e177eb9b3a9a9d43a437bd5e549f3a7d09525e5d69a3fed787be12ad",
+      "compressedBytes": 42233323,
+      "license": "Apache-2.0",
+      "redistributable": false,
+      "officialPage": "https://alphacephei.com/vosk/models",
+      "platforms": [
+        "android",
+        "windows"
+      ],
+      "minimumRuntime": "Vosk 0.3.38; Android 10+ or Windows x64",
+      "languages": [
+        "fr"
+      ],
+      "targetLanguages": [],
+      "voices": [],
+      "validationRules": [
+        "sha256",
+        "archive-path-safety",
+        "requires:final.mdl",
+        "requires:conf/model.conf"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "vosk-de-small",
+      "displayName": "Vosk 德语小模型",
+      "description": "轻量德语离线识别；适合低内存设备",
+      "capability": "ASR",
+      "engine": "vosk",
+      "modelFormat": "vosk-folder",
+      "version": "0.15",
+      "files": [
+        "final.mdl",
+        "conf/model.conf"
+      ],
+      "entryPoint": "final.mdl",
+      "downloadUrls": [
+        "https://alphacephei.com/vosk/models/vosk-model-small-de-0.15.zip"
+      ],
+      "mirrors": [],
+      "sha256": "b7e53c90b1f0a38456f4cd62b366ecd58803cd97cd42b06438e2c131713d5e43",
+      "compressedBytes": 46499967,
+      "license": "Apache-2.0",
+      "redistributable": false,
+      "officialPage": "https://alphacephei.com/vosk/models",
+      "platforms": [
+        "android",
+        "windows"
+      ],
+      "minimumRuntime": "Vosk 0.3.38; Android 10+ or Windows x64",
+      "languages": [
+        "de"
+      ],
+      "targetLanguages": [],
+      "voices": [],
+      "validationRules": [
+        "sha256",
+        "archive-path-safety",
+        "requires:final.mdl",
+        "requires:conf/model.conf"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "vosk-ru-small",
+      "displayName": "Vosk 俄语小模型",
+      "description": "轻量俄语离线识别；适合低内存设备",
+      "capability": "ASR",
+      "engine": "vosk",
+      "modelFormat": "vosk-folder",
+      "version": "0.22",
+      "files": [
+        "final.mdl",
+        "conf/model.conf"
+      ],
+      "entryPoint": "final.mdl",
+      "downloadUrls": [
+        "https://alphacephei.com/vosk/models/vosk-model-small-ru-0.22.zip"
+      ],
+      "mirrors": [],
+      "sha256": "961d5ff98a17f4aa6de69864d0aa71fa5bac682301d2b5d17a3f24c5c99a46d4",
+      "compressedBytes": 46236750,
+      "license": "Apache-2.0",
+      "redistributable": false,
+      "officialPage": "https://alphacephei.com/vosk/models",
+      "platforms": [
+        "android",
+        "windows"
+      ],
+      "minimumRuntime": "Vosk 0.3.38; Android 10+ or Windows x64",
+      "languages": [
+        "ru"
+      ],
+      "targetLanguages": [],
+      "voices": [],
+      "validationRules": [
+        "sha256",
+        "archive-path-safety",
+        "requires:final.mdl",
+        "requires:conf/model.conf"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "sensevoice",
+      "displayName": "SenseVoiceSmall INT8",
+      "description": "内置完整推理包；英中日韩粤语识别与自动检测",
+      "capability": "ASR",
+      "engine": "sensevoice",
+      "modelFormat": "sherpa-onnx",
+      "version": "2025-09-09-int8",
+      "files": [
+        "*.onnx",
+        "tokens.txt"
+      ],
+      "entryPoint": "*.onnx",
+      "downloadUrls": [
+        "https://github.com/Jensen-Yao/RTT/releases/download/models-v0.2.6/sensevoice.zip"
+      ],
+      "mirrors": [],
+      "sha256": "e73714b95c76d887cc12f6e960cfc3215e2be19565be3ea020f50f27bdc16853",
+      "compressedBytes": 159592309,
+      "license": "MIT",
+      "redistributable": true,
+      "officialPage": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models",
+      "platforms": [
+        "android",
+        "windows"
+      ],
+      "minimumRuntime": "sherpa-onnx 1.13.4; Android 10+ or Windows x64",
+      "languages": [
+        "auto",
+        "zh",
+        "en",
+        "ja",
+        "ko",
+        "yue"
+      ],
+      "targetLanguages": [],
+      "voices": [],
+      "validationRules": [
+        "sha256",
+        "archive-path-safety",
+        "requires:*.onnx",
+        "requires:tokens.txt"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "omnilingual-300m-int8",
+      "displayName": "Omnilingual CTC 300M INT8",
+      "description": "内置 1600+ 语言扩展识别；无语义标点时使用规则分句",
+      "capability": "ASR",
+      "engine": "sherpa-onnx-omnilingual-ctc",
+      "modelFormat": "sherpa-onnx",
+      "version": "2026-08-03-int8",
+      "files": [
+        "*.onnx",
+        "tokens.txt"
+      ],
+      "entryPoint": "*.onnx",
+      "downloadUrls": [
+        "https://github.com/Jensen-Yao/RTT/releases/download/models-v0.2.6/omnilingual-300m-int8.zip"
+      ],
+      "mirrors": [],
+      "sha256": "bd2577c3684b4c76824c61ce955ef0bb7b6f7a0695f2c5f88beba1b5cab31ddd",
+      "compressedBytes": 237683440,
+      "license": "Apache-2.0",
+      "redistributable": true,
+      "officialPage": "https://huggingface.co/OpenVoiceOS/omnilingual-asr-ctc-300m-onnx",
+      "platforms": [
+        "android",
+        "windows"
+      ],
+      "minimumRuntime": "sherpa-onnx 1.13.4; Android 10+ or Windows x64",
+      "languages": [
+        "auto",
+        "1600+"
+      ],
+      "targetLanguages": [],
+      "voices": [],
+      "validationRules": [
+        "sha256",
+        "archive-path-safety",
+        "requires:*.onnx",
+        "requires:tokens.txt"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "qwen3-asr-0.6b-int8",
+      "displayName": "Qwen3-ASR 0.6B INT8",
+      "description": "多语高准确率识别；约 879 MB，适合大内存 Android 与 Windows；不内置 APK",
+      "capability": "ASR",
+      "engine": "sherpa-onnx-qwen3-asr",
+      "modelFormat": "sherpa-onnx",
+      "version": "2026-03-25-int8",
+      "files": [
+        "*.onnx",
+        "tokens.txt"
+      ],
+      "entryPoint": "*.onnx",
+      "downloadUrls": [
+        "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-qwen3-asr-0.6B-int8-2026-03-25.tar.bz2"
+      ],
+      "mirrors": [],
+      "sha256": "393f8a14e2f5fb96746aaab342997a40641001fbd5bf9592a080a8329178ee96",
+      "compressedBytes": 878702423,
+      "license": "Apache-2.0",
+      "redistributable": false,
+      "officialPage": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models",
+      "platforms": [
+        "android",
+        "windows"
+      ],
+      "minimumRuntime": "sherpa-onnx 1.13.4; Android 10+ or Windows x64",
+      "languages": [
+        "auto",
+        "en",
+        "zh",
+        "ja",
+        "ko",
+        "vi",
+        "yue"
+      ],
+      "targetLanguages": [],
+      "voices": [],
+      "validationRules": [
+        "sha256",
+        "archive-path-safety",
+        "requires:*.onnx",
+        "requires:tokens.txt"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "punctuation-en",
+      "displayName": "punctuation-en",
+      "description": "",
+      "capability": "PUNCTUATION",
+      "engine": "sherpa-onnx-online-punctuation",
+      "modelFormat": "sherpa-onnx",
+      "version": "2024-08-06-int8",
+      "files": [
+        "model.int8.onnx",
+        "bpe.vocab"
+      ],
+      "entryPoint": "model.int8.onnx",
+      "downloadUrls": [
+        "https://github.com/k2-fsa/sherpa-onnx/releases/download/punctuation-models/sherpa-onnx-online-punct-en-2024-08-06.tar.bz2"
+      ],
+      "mirrors": [],
+      "sha256": "9f5e5a72c7d2829635bd074fce92b6bbd5b78da8a52e7ad8ed1be933f366b99d",
+      "compressedBytes": 30667839,
+      "license": "Apache-2.0",
+      "redistributable": false,
+      "officialPage": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/punctuation-models",
+      "platforms": [
+        "android"
+      ],
+      "minimumRuntime": "sherpa-onnx 1.13.4; Android 10+",
+      "languages": [
+        "en"
+      ],
+      "targetLanguages": [],
+      "voices": [],
+      "validationRules": [
+        "sha256",
+        "archive-path-safety",
+        "requires:model.int8.onnx",
+        "requires:bpe.vocab"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "bergamot-en-zh",
+      "displayName": "bergamot-en-zh",
+      "description": "",
+      "capability": "TRANSLATION",
+      "engine": "bergamot",
+      "modelFormat": "bergamot-package",
+      "version": "mozilla-registry-2026-08",
+      "files": [
+        "config.yml"
+      ],
+      "entryPoint": "config.yml",
+      "downloadUrls": [
+        "https://github.com/Jensen-Yao/RTT/releases/download/models-v0.2.6/bergamot-en-zh.zip"
+      ],
+      "mirrors": [],
+      "sha256": "a2af66b20616d4ea01e053551805b0a9ca01a6040ac599822fc4a7361ca20aab",
+      "compressedBytes": 36741555,
+      "license": "MPL-2.0",
+      "redistributable": true,
+      "officialPage": "https://github.com/mozilla/bergamot-translator",
+      "platforms": [
+        "windows"
+      ],
+      "minimumRuntime": "BergamotTranslatorSharp 0.5.1; Windows x64",
+      "languages": [
+        "en"
+      ],
+      "targetLanguages": [
+        "zh-CN"
+      ],
+      "voices": [],
+      "validationRules": [
+        "sha256",
+        "archive-path-safety",
+        "requires:config.yml"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "marian-en-zh-int8",
+      "displayName": "OPUS-MT 英语到中文 INT8",
+      "description": "本地 Marian ONNX 翻译；比 ML Kit 更适合英语电影对白，首次下载后完全离线",
+      "capability": "TRANSLATION",
+      "engine": "marian-onnx",
+      "modelFormat": "marian-onnx",
+      "version": "opus-mt-en-zh-onnx-int8-2026-08",
+      "files": [
+        "encoder_model_quantized.onnx",
+        "decoder_model_quantized.onnx",
+        "tokenizer.json",
+        "vocab.json"
+      ],
+      "entryPoint": "encoder_model_quantized.onnx",
+      "downloadUrls": [
+        "https://github.com/Jensen-Yao/RTT/releases/download/models-v0.2.6/marian-en-zh-int8.zip"
+      ],
+      "mirrors": [],
+      "sha256": "dc8a4324213c8d8438b73a2a2eb09b5884bb3f08e3b3be0259d4c4491edf662d",
+      "compressedBytes": 182168297,
+      "license": "Apache-2.0",
+      "redistributable": true,
+      "officialPage": "https://huggingface.co/Helsinki-NLP/opus-mt-en-zh",
+      "platforms": [
+        "android"
+      ],
+      "minimumRuntime": "ONNX Runtime Android 1.27.0; Android 10+",
+      "languages": [
+        "en"
+      ],
+      "targetLanguages": [
+        "zh-CN"
+      ],
+      "voices": [],
+      "validationRules": [
+        "sha256",
+        "archive-path-safety",
+        "requires:encoder_model_quantized.onnx",
+        "requires:decoder_model_quantized.onnx",
+        "requires:tokenizer.json",
+        "requires:vocab.json"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "bergamot-ja-en",
+      "displayName": "bergamot-ja-en",
+      "description": "",
+      "capability": "TRANSLATION",
+      "engine": "bergamot",
+      "modelFormat": "bergamot-package",
+      "version": "mozilla-registry-2026-08",
+      "files": [
+        "config.yml"
+      ],
+      "entryPoint": "config.yml",
+      "downloadUrls": [
+        "https://github.com/Jensen-Yao/RTT/releases/download/models-v0.2.6/bergamot-ja-en.zip"
+      ],
+      "mirrors": [],
+      "sha256": "a3f5f7fcdd419acf76f2900fcd6c7497a97029f7eac549ef6776b1df00f57d29",
+      "compressedBytes": 48646520,
+      "license": "MPL-2.0",
+      "redistributable": true,
+      "officialPage": "https://github.com/mozilla/bergamot-translator",
+      "platforms": [
+        "windows"
+      ],
+      "minimumRuntime": "BergamotTranslatorSharp 0.5.1; Windows x64; requires bergamot-en-zh for Japanese to Chinese",
+      "languages": [
+        "ja"
+      ],
+      "targetLanguages": [
+        "en"
+      ],
+      "voices": [],
+      "validationRules": [
+        "sha256",
+        "archive-path-safety",
+        "requires:config.yml"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "rules-segmentation",
+      "displayName": "RTT multilingual rule segmentation",
+      "description": "Language-aware fallback segmentation for Chinese, Japanese, Korean, and punctuation-poor recognizers.",
+      "capability": "PUNCTUATION",
+      "engine": "rtt-rules",
+      "modelFormat": "built-in-rules",
+      "version": "2.0.0",
+      "files": [],
+      "entryPoint": "builtin",
+      "downloadUrls": [],
+      "mirrors": [],
+      "sha256": "",
+      "compressedBytes": 0,
+      "installedBytes": 0,
+      "minimumMemoryBytes": 0,
+      "license": "Apache-2.0",
+      "redistributable": true,
+      "officialPage": "https://rtt.jenseny.top/models/",
+      "platforms": [
+        "android",
+        "windows",
+        "web"
+      ],
+      "minimumRuntime": "RTT 0.2.0+",
+      "languages": [
+        "auto",
+        "zh",
+        "yue",
+        "en",
+        "ja",
+        "ko",
+        "es",
+        "fr",
+        "de",
+        "it",
+        "pt",
+        "ru",
+        "ar",
+        "hi",
+        "th",
+        "vi",
+        "id"
+      ],
+      "targetLanguages": [],
+      "voices": [],
+      "validationRules": [
+        "built-in"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "mlkit-ocr",
+      "displayName": "Google ML Kit on-device OCR",
+      "description": "Android on-device text recognition for selectable screen subtitle regions.",
+      "capability": "OCR",
+      "engine": "mlkit-text-recognition",
+      "modelFormat": "platform-runtime",
+      "version": "16.0.1",
+      "files": [],
+      "entryPoint": "android-runtime",
+      "downloadUrls": [],
+      "mirrors": [],
+      "sha256": "",
+      "compressedBytes": 0,
+      "installedBytes": 0,
+      "minimumMemoryBytes": 0,
+      "license": "Google ML Kit terms",
+      "redistributable": false,
+      "officialPage": "https://developers.google.com/ml-kit/vision/text-recognition/v2",
+      "platforms": [
+        "android"
+      ],
+      "minimumRuntime": "Android 10+; Google ML Kit",
+      "languages": [
+        "zh",
+        "en",
+        "ja",
+        "ko",
+        "latin"
+      ],
+      "targetLanguages": [],
+      "voices": [],
+      "validationRules": [
+        "runtime-enumeration"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "mlkit-translation",
+      "displayName": "Google ML Kit translation language packs",
+      "description": "Per-language offline translation packs downloaded and managed by ML Kit on Android.",
+      "capability": "TRANSLATION",
+      "engine": "mlkit-translation",
+      "modelFormat": "platform-language-pack",
+      "version": "17.0.3",
+      "files": [],
+      "entryPoint": "android-runtime",
+      "downloadUrls": [],
+      "mirrors": [],
+      "sha256": "",
+      "compressedBytes": 0,
+      "installedBytes": 0,
+      "minimumMemoryBytes": 0,
+      "license": "Google ML Kit terms",
+      "redistributable": false,
+      "officialPage": "https://developers.google.com/ml-kit/language/translation",
+      "platforms": [
+        "android"
+      ],
+      "minimumRuntime": "Android 10+; Google ML Kit",
+      "languages": [
+        "multilingual"
+      ],
+      "targetLanguages": [
+        "multilingual"
+      ],
+      "voices": [],
+      "validationRules": [
+        "runtime-enumeration"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "tesseract-web-ocr",
+      "displayName": "Tesseract.js OCR language data",
+      "description": "Browser OCR candidate for user-selected screen captures; language data stays in browser storage.",
+      "capability": "OCR",
+      "engine": "tesseract.js",
+      "modelFormat": "traineddata",
+      "version": "upstream",
+      "files": [
+        "*.traineddata.gz"
+      ],
+      "entryPoint": "*.traineddata.gz",
+      "downloadUrls": [
+        "https://github.com/naptha/tessdata"
+      ],
+      "mirrors": [],
+      "sha256": "",
+      "compressedBytes": 0,
+      "installedBytes": 0,
+      "minimumMemoryBytes": 268435456,
+      "license": "Apache-2.0",
+      "redistributable": false,
+      "officialPage": "https://github.com/naptha/tesseract.js",
+      "platforms": [
+        "web"
+      ],
+      "minimumRuntime": "Tesseract.js worker",
+      "languages": [
+        "multilingual"
+      ],
+      "targetLanguages": [],
+      "voices": [],
+      "validationRules": [
+        "user-selected-language-data"
+      ],
+      "verifiedStatus": "LINK_ONLY"
+    },
+    {
+      "id": "system-voices",
+      "capability": "TTS",
+      "engine": "system-tts",
+      "modelFormat": "platform-voice",
+      "version": "2.0.0",
+      "files": [],
+      "entryPoint": "system",
+      "downloadUrls": [],
+      "mirrors": [],
+      "sha256": "",
+      "compressedBytes": 0,
+      "installedBytes": 0,
+      "minimumMemoryBytes": 0,
+      "license": "Platform dependent",
+      "redistributable": false,
+      "officialPage": "https://developer.android.com/reference/android/speech/tts/Voice",
+      "platforms": [
+        "android",
+        "windows",
+        "web"
+      ],
+      "minimumRuntime": "RTT 0.2.0",
+      "languages": [
+        "zh",
+        "en",
+        "ja",
+        "ko"
+      ],
+      "voices": [],
+      "validationRules": [
+        "runtime-enumeration"
+      ],
+      "verifiedStatus": "VERIFIED"
+    },
+    {
+      "id": "piper-zh-huayan",
+      "capability": "TTS",
+      "engine": "sherpa-onnx-tts",
+      "modelFormat": "piper-onnx",
+      "version": "upstream",
+      "files": [
+        "*.onnx",
+        "*.onnx.json"
+      ],
+      "entryPoint": "*.onnx",
+      "downloadUrls": [
+        "https://huggingface.co/rhasspy/piper-voices/tree/main/zh/zh_CN/huayan"
+      ],
+      "mirrors": [],
+      "sha256": "",
+      "compressedBytes": 0,
+      "installedBytes": 0,
+      "minimumMemoryBytes": 268435456,
+      "license": "Verify upstream model card before redistribution",
+      "licenseUrl": "https://huggingface.co/rhasspy/piper-voices",
+      "redistributable": false,
+      "officialPage": "https://huggingface.co/rhasspy/piper-voices",
+      "documentationUrl": "https://github.com/k2-fsa/sherpa-onnx",
+      "platforms": [
+        "android",
+        "windows",
+        "web"
+      ],
+      "minimumRuntime": "sherpa-onnx TTS",
+      "languages": [
+        "zh"
+      ],
+      "voices": [],
+      "validationRules": [
+        "piper-onnx",
+        "license-review"
+      ],
+      "verifiedStatus": "LINK_ONLY"
+    },
+    {
+      "id": "melotts-chinese",
+      "capability": "TTS",
+      "engine": "melotts-local-service",
+      "modelFormat": "pytorch",
+      "version": "upstream",
+      "files": [],
+      "downloadUrls": [
+        "https://huggingface.co/myshell-ai/MeloTTS-Chinese"
+      ],
+      "mirrors": [],
+      "sha256": "",
+      "compressedBytes": 0,
+      "installedBytes": 0,
+      "minimumMemoryBytes": 2147483648,
+      "license": "MIT",
+      "licenseUrl": "https://huggingface.co/myshell-ai/MeloTTS-Chinese",
+      "redistributable": false,
+      "officialPage": "https://github.com/myshell-ai/MeloTTS",
+      "platforms": [
+        "windows"
+      ],
+      "minimumRuntime": "Python local service plugin",
+      "languages": [
+        "zh"
+      ],
+      "voices": [],
+      "validationRules": [
+        "local-service-health"
+      ],
+      "verifiedStatus": "CANDIDATE"
+    },
+    {
+      "id": "cosyvoice3-0.5b",
+      "capability": "TTS",
+      "engine": "cosyvoice-local-service",
+      "modelFormat": "pytorch-onnx",
+      "version": "2512",
+      "files": [],
+      "downloadUrls": [
+        "https://huggingface.co/FunAudioLLM/Fun-CosyVoice3-0.5B-2512"
+      ],
+      "mirrors": [],
+      "sha256": "",
+      "compressedBytes": 0,
+      "installedBytes": 0,
+      "minimumMemoryBytes": 4294967296,
+      "license": "Apache-2.0; verify model card and voice rights",
+      "licenseUrl": "https://huggingface.co/FunAudioLLM/Fun-CosyVoice3-0.5B-2512",
+      "redistributable": false,
+      "officialPage": "https://github.com/FunAudioLLM/CosyVoice",
+      "platforms": [
+        "windows"
+      ],
+      "minimumRuntime": "CosyVoice local service plugin",
+      "languages": [
+        "zh",
+        "en",
+        "ja",
+        "ko"
+      ],
+      "voices": [],
+      "validationRules": [
+        "local-service-health",
+        "voice-rights-confirmation"
+      ],
+      "verifiedStatus": "CANDIDATE"
+    }
+  ]
+}
