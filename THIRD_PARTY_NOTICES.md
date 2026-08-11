@@ -21,6 +21,7 @@ NuGet, and npm lock files are the authoritative dependency inventory.
 | .NET runtime | 10.0 | Windows application runtime | MIT | https://github.com/dotnet/runtime |
 | Vosk .NET | 0.3.38 | Streaming speech recognition | Apache-2.0 | https://github.com/alphacep/vosk-api |
 | BergamotTranslatorSharp | 0.5.1 | Windows local translation | MPL-2.0 | https://github.com/Freeesia/BergamotTranslatorSharp |
+| SharpCompress | 0.41.0 | Windows ZIP/TAR.BZ2 model extraction | MIT | https://github.com/adamhathcock/sharpcompress |
 | NAudio | 2.2.1 | WASAPI audio capture and playback | MIT | https://github.com/naudio/NAudio |
 | sherpa-onnx .NET and win-x64 runtime | 1.13.4 | SenseVoice inference and VAD | Apache-2.0 | https://github.com/k2-fsa/sherpa-onnx |
 | System.Speech | 10.0.0 | Windows TTS fallback | MIT | https://github.com/dotnet/runtime |

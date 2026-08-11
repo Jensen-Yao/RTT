@@ -1,7 +1,7 @@
 {
   "$schema": "../contracts/capability-package-catalog.schema.json",
   "catalogVersion": 2,
-  "releasePolicy": "VERIFIED packages may be offered in RTT-managed downloads. CANDIDATE and LINK_ONLY entries remain upstream links until runtime, license, checksum, and device inference are verified.",
+  "releasePolicy": "VERIFIED requires real inference on every listed verified platform. LINK_ONLY, CANDIDATE, NEEDS_RUNTIME, and UNAVAILABLE entries must not be presented as ready to run.",
   "packages": [
     {
       "id": "vosk-en",
@@ -27,7 +27,8 @@
       "officialPage": "https://alphacephei.com/vosk/models",
       "platforms": [
         "android",
-        "windows"
+        "windows",
+        "web"
       ],
       "minimumRuntime": "Vosk 0.3.38; Android 10+ or Windows x64",
       "languages": [
@@ -41,7 +42,15 @@
         "requires:final.mdl",
         "requires:conf/model.conf"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "VERIFIED",
+        "web": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Windows fixture inference passed on 2026-08-10; Android emulator inference passed, while physical-device and browser acceptance are still pending."
+      ]
     },
     {
       "id": "vosk-ja",
@@ -67,7 +76,8 @@
       "officialPage": "https://alphacephei.com/vosk/models",
       "platforms": [
         "android",
-        "windows"
+        "windows",
+        "web"
       ],
       "minimumRuntime": "Vosk 0.3.38; Android 10+ or Windows x64",
       "languages": [
@@ -81,7 +91,15 @@
         "requires:final.mdl",
         "requires:conf/model.conf"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "VERIFIED",
+        "web": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Windows fixture inference passed on 2026-08-10; Android emulator inference passed, while physical-device and browser acceptance are still pending."
+      ]
     },
     {
       "id": "vosk-zh-small",
@@ -97,13 +115,13 @@
       ],
       "entryPoint": "final.mdl",
       "downloadUrls": [
-        "https://alphacephei.com/vosk/models/vosk-model-small-cn-0.22.zip"
+        "https://github.com/Jensen-Yao/RTT/releases/download/models-v0.2.6/vosk-zh-small.zip"
       ],
       "mirrors": [],
       "sha256": "3af8b0e7e0f835ae9d414ce5df580237a3cfb08d586c9fbbb0f7ff29ad5b14ba",
       "compressedBytes": 43898754,
       "license": "Apache-2.0",
-      "redistributable": false,
+      "redistributable": true,
       "officialPage": "https://alphacephei.com/vosk/models",
       "platforms": [
         "android",
@@ -121,7 +139,14 @@
         "requires:final.mdl",
         "requires:conf/model.conf"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "VERIFIED"
+      },
+      "knownIssues": [
+        "Windows Mandarin fixture inference passed on 2026-08-10; Android real-device inference is still pending."
+      ]
     },
     {
       "id": "vosk-ko-small",
@@ -161,7 +186,14 @@
         "requires:final.mdl",
         "requires:conf/model.conf"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "CANDIDATE"
+      },
+      "knownIssues": [
+        "RTT v0.3.0 real inference acceptance is pending for the listed platforms."
+      ]
     },
     {
       "id": "vosk-es-small",
@@ -201,7 +233,14 @@
         "requires:final.mdl",
         "requires:conf/model.conf"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "CANDIDATE"
+      },
+      "knownIssues": [
+        "RTT v0.3.0 real inference acceptance is pending for the listed platforms."
+      ]
     },
     {
       "id": "vosk-fr-small",
@@ -241,7 +280,14 @@
         "requires:final.mdl",
         "requires:conf/model.conf"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "CANDIDATE"
+      },
+      "knownIssues": [
+        "RTT v0.3.0 real inference acceptance is pending for the listed platforms."
+      ]
     },
     {
       "id": "vosk-de-small",
@@ -281,7 +327,14 @@
         "requires:final.mdl",
         "requires:conf/model.conf"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "CANDIDATE"
+      },
+      "knownIssues": [
+        "RTT v0.3.0 real inference acceptance is pending for the listed platforms."
+      ]
     },
     {
       "id": "vosk-ru-small",
@@ -321,7 +374,14 @@
         "requires:final.mdl",
         "requires:conf/model.conf"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "CANDIDATE"
+      },
+      "knownIssues": [
+        "RTT v0.3.0 real inference acceptance is pending for the listed platforms."
+      ]
     },
     {
       "id": "sensevoice",
@@ -347,7 +407,8 @@
       "officialPage": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models",
       "platforms": [
         "android",
-        "windows"
+        "windows",
+        "web"
       ],
       "minimumRuntime": "sherpa-onnx 1.13.4; Android 10+ or Windows x64",
       "languages": [
@@ -366,7 +427,15 @@
         "requires:*.onnx",
         "requires:tokens.txt"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "VERIFIED",
+        "web": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Windows fixture inference passed on 2026-08-10; Android emulator inference passed, while physical-device and browser acceptance are still pending."
+      ]
     },
     {
       "id": "omnilingual-300m-int8",
@@ -392,7 +461,8 @@
       "officialPage": "https://huggingface.co/OpenVoiceOS/omnilingual-asr-ctc-300m-onnx",
       "platforms": [
         "android",
-        "windows"
+        "windows",
+        "web"
       ],
       "minimumRuntime": "sherpa-onnx 1.13.4; Android 10+ or Windows x64",
       "languages": [
@@ -407,7 +477,15 @@
         "requires:*.onnx",
         "requires:tokens.txt"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "VERIFIED",
+        "web": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Windows fixture inference passed on 2026-08-10; Android emulator inference passed, while physical-device and browser acceptance are still pending."
+      ]
     },
     {
       "id": "qwen3-asr-0.6b-int8",
@@ -453,7 +531,14 @@
         "requires:*.onnx",
         "requires:tokens.txt"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "UNAVAILABLE"
+      },
+      "knownIssues": [
+        "Android requires a high-memory device; the Windows native adapter is not complete."
+      ]
     },
     {
       "id": "punctuation-en",
@@ -492,7 +577,13 @@
         "requires:model.int8.onnx",
         "requires:bpe.vocab"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Only the Android sherpa-onnx adapter is implemented; device inference is pending."
+      ]
     },
     {
       "id": "bergamot-en-zh",
@@ -531,7 +622,13 @@
         "archive-path-safety",
         "requires:config.yml"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "VERIFIED",
+      "verifiedPlatforms": {
+        "windows": "VERIFIED"
+      },
+      "knownIssues": [
+        "Windows English-to-Chinese text inference passed on 2026-08-10."
+      ]
     },
     {
       "id": "marian-en-zh-int8",
@@ -576,7 +673,13 @@
         "requires:tokenizer.json",
         "requires:vocab.json"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Android runtime exists, but device inference and quality acceptance are pending."
+      ]
     },
     {
       "id": "bergamot-ja-en",
@@ -615,7 +718,13 @@
         "archive-path-safety",
         "requires:config.yml"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "VERIFIED",
+      "verifiedPlatforms": {
+        "windows": "VERIFIED"
+      },
+      "knownIssues": [
+        "Windows Japanese-to-Chinese pivot inference passed on 2026-08-10; the route requires both Bergamot packages."
+      ]
     },
     {
       "id": "rules-segmentation",
@@ -666,7 +775,13 @@
       "validationRules": [
         "built-in"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "VERIFIED",
+      "verifiedPlatforms": {
+        "android": "VERIFIED",
+        "windows": "VERIFIED",
+        "web": "VERIFIED"
+      },
+      "knownIssues": []
     },
     {
       "id": "mlkit-ocr",
@@ -703,7 +818,13 @@
       "validationRules": [
         "runtime-enumeration"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Requires Android device inference verification for each script package."
+      ]
     },
     {
       "id": "mlkit-translation",
@@ -738,7 +859,13 @@
       "validationRules": [
         "runtime-enumeration"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Language packs are downloaded by Google ML Kit and vary by language pair."
+      ]
     },
     {
       "id": "tesseract-web-ocr",
@@ -775,7 +902,13 @@
       "validationRules": [
         "user-selected-language-data"
       ],
-      "verifiedStatus": "LINK_ONLY"
+      "verifiedStatus": "LINK_ONLY",
+      "verifiedPlatforms": {
+        "web": "LINK_ONLY"
+      },
+      "knownIssues": [
+        "Users must select compatible traineddata files before browser OCR can run."
+      ]
     },
     {
       "id": "system-voices",
@@ -810,7 +943,13 @@
       "validationRules": [
         "runtime-enumeration"
       ],
-      "verifiedStatus": "VERIFIED"
+      "verifiedStatus": "VERIFIED",
+      "verifiedPlatforms": {
+        "android": "VERIFIED",
+        "windows": "VERIFIED",
+        "web": "VERIFIED"
+      },
+      "knownIssues": []
     },
     {
       "id": "piper-zh-huayan",
@@ -850,7 +989,15 @@
         "piper-onnx",
         "license-review"
       ],
-      "verifiedStatus": "LINK_ONLY"
+      "verifiedStatus": "LINK_ONLY",
+      "verifiedPlatforms": {
+        "android": "LINK_ONLY",
+        "windows": "LINK_ONLY",
+        "web": "LINK_ONLY"
+      },
+      "knownIssues": [
+        "Voice installation, runtime loading, and audio output require platform acceptance before this package is marked verified."
+      ]
     },
     {
       "id": "melotts-chinese",
@@ -882,7 +1029,13 @@
       "validationRules": [
         "local-service-health"
       ],
-      "verifiedStatus": "CANDIDATE"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "windows": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Voice installation, runtime loading, and audio output require platform acceptance before this package is marked verified."
+      ]
     },
     {
       "id": "cosyvoice3-0.5b",
@@ -918,7 +1071,13 @@
         "local-service-health",
         "voice-rights-confirmation"
       ],
-      "verifiedStatus": "CANDIDATE"
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "windows": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Voice installation, runtime loading, and audio output require platform acceptance before this package is marked verified."
+      ]
     }
   ]
 }

@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.3.0] - Unreleased
+
+- Consolidate the unreleased 0.2.8 and 0.2.9 work into one cross-platform release baseline.
+- Keep real-time captions as the primary product surface while completing the professional translator, model discovery, local runtimes, capability routes, and unified release validation.
+- Keep complete source code in the private `Jensen-Yao/RTT-test` repository; the public `RTT` repository remains distribution-only.
+- Add a repeatable F-drive model install and verification command. Downloadable entries now expose an install action, while the report distinguishes checksum/layout installation from real runtime inference.
+
+## [0.2.8] - 2026-08-10
+
+- Make Android back navigation predictable: repeated utility routes are deduplicated, nested pages return one level at a time, and the root workspace is not dismissed by an edge-back gesture.
+- Improve Web shared-audio setup with explicit browser capability feedback, automatic compatible ASR selection, and a basic-constraints retry for browsers that reject advanced display-capture hints.
+- Harden Windows startup by making tray initialization and the optional localhost model bridge non-fatal; startup failures are logged while the main window remains available when possible.
+- Add a DeepL-style anonymous quick translator to the Chinese and English home pages, with language swap, paste, clear, copy, character count, and local/browser translation fallback before sign-in.
+
 ## [0.2.7] - 2026-08-10
 
 - Keep the source repository private and publish only compiled clients, static web assets, and user documentation in the public distribution repository.

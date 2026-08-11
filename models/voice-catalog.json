@@ -19,12 +19,29 @@
       "license": "Platform dependent",
       "redistributable": false,
       "officialPage": "https://developer.android.com/reference/android/speech/tts/Voice",
-      "platforms": ["android", "windows", "web"],
+      "platforms": [
+        "android",
+        "windows",
+        "web"
+      ],
       "minimumRuntime": "RTT 0.2.0",
-      "languages": ["zh", "en", "ja", "ko"],
+      "languages": [
+        "zh",
+        "en",
+        "ja",
+        "ko"
+      ],
       "voices": [],
-      "validationRules": ["runtime-enumeration"],
-      "verifiedStatus": "VERIFIED"
+      "validationRules": [
+        "runtime-enumeration"
+      ],
+      "verifiedStatus": "VERIFIED",
+      "verifiedPlatforms": {
+        "android": "VERIFIED",
+        "windows": "VERIFIED",
+        "web": "VERIFIED"
+      },
+      "knownIssues": []
     },
     {
       "id": "piper-zh-huayan",
@@ -32,9 +49,14 @@
       "engine": "sherpa-onnx-tts",
       "modelFormat": "piper-onnx",
       "version": "upstream",
-      "files": ["*.onnx", "*.onnx.json"],
+      "files": [
+        "*.onnx",
+        "*.onnx.json"
+      ],
       "entryPoint": "*.onnx",
-      "downloadUrls": ["https://huggingface.co/rhasspy/piper-voices/tree/main/zh/zh_CN/huayan"],
+      "downloadUrls": [
+        "https://huggingface.co/rhasspy/piper-voices/tree/main/zh/zh_CN/huayan"
+      ],
       "mirrors": [],
       "sha256": "",
       "compressedBytes": 0,
@@ -45,12 +67,29 @@
       "redistributable": false,
       "officialPage": "https://huggingface.co/rhasspy/piper-voices",
       "documentationUrl": "https://github.com/k2-fsa/sherpa-onnx",
-      "platforms": ["android", "windows", "web"],
+      "platforms": [
+        "android",
+        "windows",
+        "web"
+      ],
       "minimumRuntime": "sherpa-onnx TTS",
-      "languages": ["zh"],
+      "languages": [
+        "zh"
+      ],
       "voices": [],
-      "validationRules": ["piper-onnx", "license-review"],
-      "verifiedStatus": "LINK_ONLY"
+      "validationRules": [
+        "piper-onnx",
+        "license-review"
+      ],
+      "verifiedStatus": "LINK_ONLY",
+      "verifiedPlatforms": {
+        "android": "LINK_ONLY",
+        "windows": "LINK_ONLY",
+        "web": "LINK_ONLY"
+      },
+      "knownIssues": [
+        "Voice installation, runtime loading, and audio output require platform acceptance before this package is marked verified."
+      ]
     },
     {
       "id": "melotts-chinese",
@@ -59,7 +98,9 @@
       "modelFormat": "pytorch",
       "version": "upstream",
       "files": [],
-      "downloadUrls": ["https://huggingface.co/myshell-ai/MeloTTS-Chinese"],
+      "downloadUrls": [
+        "https://huggingface.co/myshell-ai/MeloTTS-Chinese"
+      ],
       "mirrors": [],
       "sha256": "",
       "compressedBytes": 0,
@@ -69,12 +110,24 @@
       "licenseUrl": "https://huggingface.co/myshell-ai/MeloTTS-Chinese",
       "redistributable": false,
       "officialPage": "https://github.com/myshell-ai/MeloTTS",
-      "platforms": ["windows"],
+      "platforms": [
+        "windows"
+      ],
       "minimumRuntime": "Python local service plugin",
-      "languages": ["zh"],
+      "languages": [
+        "zh"
+      ],
       "voices": [],
-      "validationRules": ["local-service-health"],
-      "verifiedStatus": "CANDIDATE"
+      "validationRules": [
+        "local-service-health"
+      ],
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "windows": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Voice installation, runtime loading, and audio output require platform acceptance before this package is marked verified."
+      ]
     },
     {
       "id": "cosyvoice3-0.5b",
@@ -83,7 +136,9 @@
       "modelFormat": "pytorch-onnx",
       "version": "2512",
       "files": [],
-      "downloadUrls": ["https://huggingface.co/FunAudioLLM/Fun-CosyVoice3-0.5B-2512"],
+      "downloadUrls": [
+        "https://huggingface.co/FunAudioLLM/Fun-CosyVoice3-0.5B-2512"
+      ],
       "mirrors": [],
       "sha256": "",
       "compressedBytes": 0,
@@ -93,12 +148,28 @@
       "licenseUrl": "https://huggingface.co/FunAudioLLM/Fun-CosyVoice3-0.5B-2512",
       "redistributable": false,
       "officialPage": "https://github.com/FunAudioLLM/CosyVoice",
-      "platforms": ["windows"],
+      "platforms": [
+        "windows"
+      ],
       "minimumRuntime": "CosyVoice local service plugin",
-      "languages": ["zh", "en", "ja", "ko"],
+      "languages": [
+        "zh",
+        "en",
+        "ja",
+        "ko"
+      ],
       "voices": [],
-      "validationRules": ["local-service-health", "voice-rights-confirmation"],
-      "verifiedStatus": "CANDIDATE"
+      "validationRules": [
+        "local-service-health",
+        "voice-rights-confirmation"
+      ],
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "windows": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Voice installation, runtime loading, and audio output require platform acceptance before this package is marked verified."
+      ]
     }
   ]
 }

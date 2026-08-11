@@ -27,7 +27,7 @@ Android 模型存储在手机的 RTT 私有应用目录，不会写入 Windows �
 $env:RTT_MODELS_ROOT = 'F:\RTT\models\downloads'
 ```
 
-不要把模型解压到 `C:\Users\...`。模型管理器支持断点续传、文件大小与 SHA-256 校验、更新覆盖和删除。
+不要把模型解压到 `C:\Users\...`。模型管理器支持断点续传、文件大小与 SHA-256 校验、更新覆盖和删除。Windows 开发环境可执行 `.\scripts\download-install-verify-models.ps1 -RunWindowsInference`，直接把首批模型安装到 `F:\RTT\models\downloads` 并生成 `artifacts/model-install-verification.json`；报告会区分“真实推理通过”和“仅布局验证”。
 
 ## 权限与捕获
 

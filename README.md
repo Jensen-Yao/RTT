@@ -1,7 +1,5 @@
 # RTT 实时翻译字幕
 
-> 这是 RTT 的公开发行仓库，只包含编译后的 Web/PWA、Android 与 Windows 发行包、用户文档、模型目录和校验文件。RTT 源代码不在此仓库展示。
-
 **RTT（Real-Time Translator）** 是一款面向 Web/PWA、Android 和 Windows 的开放翻译平台。实时字幕把外语影片、直播、会议、语音聊天或画面字幕转换成可悬浮显示的双语字幕；专业翻译机则处理文字、PDF、Office、结构化文本与字幕文件。
 
 [产品首页](https://rtt.jenseny.top/) · [Web 工作台](https://rtt.jenseny.top/app/) · [中文镜像](https://rtt.jenseny.cn/) · [模型目录](https://rtt.jenseny.top/models/) · [下载最新版本](https://github.com/Jensen-Yao/RTT/releases/latest) · [中文使用指南](docs/zh-CN/README.md) · [English guide](docs/en/README.md)
@@ -49,13 +47,21 @@ Web、Android 和 Windows 都会先显示登录或注册界面，并统一使用
 
 ## 模型和翻译选择
 
-- **应用内下载**：保留 Vosk 和其他语言模型的下载入口，可按语言筛选并自行选择已安装模型。
+- **应用内下载**：保留 Vosk 和其他语言模型的下载入口，可按语言筛选并自行选择已安装模型。模型卡片提供“下载并验证/安装并验证”，未完成运行时检查的条目不会伪装成可用。
 - **Android 本地模型限制**：单个可下载模型包上限为 1 GB；基础模型随 APK 提供，其余模型由用户主动下载。
 - **本地文字翻译**：支持 ML Kit 语言包和经过 Marian ONNX 布局验证的导入模型。导入模型可以添加自己的说明；尚未验证的目录会显示为参考资料，不会假装可以运行。
 - **翻译 API**：除了通用模型 API，单独提供 DeepL、百度翻译与 LibreTranslate 的翻译配置页。
 - **文档翻译 API**：原生文档能力与普通文字翻译分开声明。没有文档能力的模型不会被标记为可保留 PDF/Office 版式。
 
-推荐模型、下载来源、许可证、平台建议和验证状态见 [推荐模型与许可证](docs/zh-CN/RECOMMENDED_MODELS.md)。候选模型不会被标记为“可用”，直到其运行时、许可证、文件校验与设备推理均通过验证。
+推荐模型、下载来源、许可证、平台建议和验证状态见 [推荐模型与许可证](docs/zh-CN/RECOMMENDED_MODELS.md)。具备完整下载元数据的模型会明确显示“可直接下载安装（自动校验）”，而不是提供一个没有动作入口的“待验证”状态。
+
+Windows 开发环境可以直接执行下面的命令，把首批模型下载/复用到 `F:\RTT\models`、解压安装并检查布局，然后运行真实推理验收：
+
+```powershell
+.\scripts\download-install-verify-models.ps1 -RunWindowsInference
+```
+
+结果写入本机的 `artifacts/model-install-verification.json`，汇总说明见 [模型安装与验证记录](docs/zh-CN/MODEL_VERIFICATION.md)。报告中的 `WINDOWS_REAL_INFERENCE_PASSED` 表示已经用 RTT 的实际 ASR 或翻译运行时处理测试音频/文本；`INSTALLED_LAYOUT_VERIFIED` 只表示文件和布局正确，通常还需要对应原生运行时或设备测试。
 
 ## RTT 如何工作
 

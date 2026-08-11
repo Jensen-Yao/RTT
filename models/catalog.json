@@ -7,7 +7,9 @@
       "kind": "asr",
       "engine": "vosk",
       "sourceLanguage": "en",
-      "sourceLanguages": ["en"],
+      "sourceLanguages": [
+        "en"
+      ],
       "targetLanguage": null,
       "version": "0.15",
       "downloadUrl": "https://github.com/Jensen-Yao/RTT/releases/download/models-v0.2.6/vosk-en.zip",
@@ -18,14 +20,25 @@
       "officialPage": "https://alphacephei.com/vosk/models",
       "recommendedPlatform": "both",
       "displayName": "Vosk 英语小模型",
-      "description": "内置轻量英语流式识别；局部结果延迟低"
+      "description": "内置轻量英语流式识别；局部结果延迟低",
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "VERIFIED",
+        "web": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Windows fixture inference passed on 2026-08-10; Android emulator inference passed, while physical-device and browser acceptance are still pending."
+      ]
     },
     {
       "id": "vosk-ja",
       "kind": "asr",
       "engine": "vosk",
       "sourceLanguage": "ja",
-      "sourceLanguages": ["ja"],
+      "sourceLanguages": [
+        "ja"
+      ],
       "targetLanguage": null,
       "version": "0.22",
       "downloadUrl": "https://github.com/Jensen-Yao/RTT/releases/download/models-v0.2.6/vosk-ja.zip",
@@ -36,17 +49,28 @@
       "officialPage": "https://alphacephei.com/vosk/models",
       "recommendedPlatform": "both",
       "displayName": "Vosk 日语小模型",
-      "description": "内置轻量日语流式识别；局部结果延迟低"
+      "description": "内置轻量日语流式识别；局部结果延迟低",
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "VERIFIED",
+        "web": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Windows fixture inference passed on 2026-08-10; Android emulator inference passed, while physical-device and browser acceptance are still pending."
+      ]
     },
     {
       "id": "vosk-zh-small",
       "kind": "asr",
       "engine": "vosk",
       "sourceLanguage": "zh",
-      "sourceLanguages": ["zh"],
+      "sourceLanguages": [
+        "zh"
+      ],
       "targetLanguage": null,
       "version": "0.22",
-      "downloadUrl": "https://alphacephei.com/vosk/models/vosk-model-small-cn-0.22.zip",
+      "downloadUrl": "https://github.com/Jensen-Yao/RTT/releases/download/models-v0.2.6/vosk-zh-small.zip",
       "sha256": "3af8b0e7e0f835ae9d414ce5df580237a3cfb08d586c9fbbb0f7ff29ad5b14ba",
       "compressedBytes": 43898754,
       "license": "Apache-2.0",
@@ -54,14 +78,24 @@
       "officialPage": "https://alphacephei.com/vosk/models",
       "recommendedPlatform": "both",
       "displayName": "Vosk 中文小模型",
-      "description": "轻量普通话离线识别；适合低内存设备"
+      "description": "轻量普通话离线识别；适合低内存设备",
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "VERIFIED"
+      },
+      "knownIssues": [
+        "Windows Mandarin fixture inference passed on 2026-08-10; Android real-device inference is still pending."
+      ]
     },
     {
       "id": "vosk-ko-small",
       "kind": "asr",
       "engine": "vosk",
       "sourceLanguage": "ko",
-      "sourceLanguages": ["ko"],
+      "sourceLanguages": [
+        "ko"
+      ],
       "targetLanguage": null,
       "version": "0.22",
       "downloadUrl": "https://alphacephei.com/vosk/models/vosk-model-small-ko-0.22.zip",
@@ -72,14 +106,24 @@
       "officialPage": "https://alphacephei.com/vosk/models",
       "recommendedPlatform": "both",
       "displayName": "Vosk 韩语小模型",
-      "description": "轻量韩语离线识别；适合低内存设备"
+      "description": "轻量韩语离线识别；适合低内存设备",
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "CANDIDATE"
+      },
+      "knownIssues": [
+        "RTT v0.3.0 real inference acceptance is pending for the listed platforms."
+      ]
     },
     {
       "id": "vosk-es-small",
       "kind": "asr",
       "engine": "vosk",
       "sourceLanguage": "es",
-      "sourceLanguages": ["es"],
+      "sourceLanguages": [
+        "es"
+      ],
       "targetLanguage": null,
       "version": "0.42",
       "downloadUrl": "https://alphacephei.com/vosk/models/vosk-model-small-es-0.42.zip",
@@ -90,14 +134,24 @@
       "officialPage": "https://alphacephei.com/vosk/models",
       "recommendedPlatform": "both",
       "displayName": "Vosk 西班牙语小模型",
-      "description": "轻量西班牙语离线识别；适合低内存设备"
+      "description": "轻量西班牙语离线识别；适合低内存设备",
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "CANDIDATE"
+      },
+      "knownIssues": [
+        "RTT v0.3.0 real inference acceptance is pending for the listed platforms."
+      ]
     },
     {
       "id": "vosk-fr-small",
       "kind": "asr",
       "engine": "vosk",
       "sourceLanguage": "fr",
-      "sourceLanguages": ["fr"],
+      "sourceLanguages": [
+        "fr"
+      ],
       "targetLanguage": null,
       "version": "0.22",
       "downloadUrl": "https://alphacephei.com/vosk/models/vosk-model-small-fr-0.22.zip",
@@ -108,14 +162,24 @@
       "officialPage": "https://alphacephei.com/vosk/models",
       "recommendedPlatform": "both",
       "displayName": "Vosk 法语小模型",
-      "description": "轻量法语离线识别；适合低内存设备"
+      "description": "轻量法语离线识别；适合低内存设备",
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "CANDIDATE"
+      },
+      "knownIssues": [
+        "RTT v0.3.0 real inference acceptance is pending for the listed platforms."
+      ]
     },
     {
       "id": "vosk-de-small",
       "kind": "asr",
       "engine": "vosk",
       "sourceLanguage": "de",
-      "sourceLanguages": ["de"],
+      "sourceLanguages": [
+        "de"
+      ],
       "targetLanguage": null,
       "version": "0.15",
       "downloadUrl": "https://alphacephei.com/vosk/models/vosk-model-small-de-0.15.zip",
@@ -126,14 +190,24 @@
       "officialPage": "https://alphacephei.com/vosk/models",
       "recommendedPlatform": "both",
       "displayName": "Vosk 德语小模型",
-      "description": "轻量德语离线识别；适合低内存设备"
+      "description": "轻量德语离线识别；适合低内存设备",
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "CANDIDATE"
+      },
+      "knownIssues": [
+        "RTT v0.3.0 real inference acceptance is pending for the listed platforms."
+      ]
     },
     {
       "id": "vosk-ru-small",
       "kind": "asr",
       "engine": "vosk",
       "sourceLanguage": "ru",
-      "sourceLanguages": ["ru"],
+      "sourceLanguages": [
+        "ru"
+      ],
       "targetLanguage": null,
       "version": "0.22",
       "downloadUrl": "https://alphacephei.com/vosk/models/vosk-model-small-ru-0.22.zip",
@@ -144,14 +218,29 @@
       "officialPage": "https://alphacephei.com/vosk/models",
       "recommendedPlatform": "both",
       "displayName": "Vosk 俄语小模型",
-      "description": "轻量俄语离线识别；适合低内存设备"
+      "description": "轻量俄语离线识别；适合低内存设备",
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "CANDIDATE"
+      },
+      "knownIssues": [
+        "RTT v0.3.0 real inference acceptance is pending for the listed platforms."
+      ]
     },
     {
       "id": "sensevoice",
       "kind": "asr",
       "engine": "sensevoice",
       "sourceLanguage": "auto",
-      "sourceLanguages": ["auto", "zh", "en", "ja", "ko", "yue"],
+      "sourceLanguages": [
+        "auto",
+        "zh",
+        "en",
+        "ja",
+        "ko",
+        "yue"
+      ],
       "targetLanguage": null,
       "version": "2025-09-09-int8",
       "downloadUrl": "https://github.com/Jensen-Yao/RTT/releases/download/models-v0.2.6/sensevoice.zip",
@@ -162,14 +251,26 @@
       "officialPage": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models",
       "recommendedPlatform": "both",
       "displayName": "SenseVoiceSmall INT8",
-      "description": "内置完整推理包；英中日韩粤语识别与自动检测"
+      "description": "内置完整推理包；英中日韩粤语识别与自动检测",
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "VERIFIED",
+        "web": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Windows fixture inference passed on 2026-08-10; Android emulator inference passed, while physical-device and browser acceptance are still pending."
+      ]
     },
     {
       "id": "omnilingual-300m-int8",
       "kind": "asr",
       "engine": "sherpa-onnx-omnilingual-ctc",
       "sourceLanguage": "auto",
-      "sourceLanguages": ["auto", "1600+"],
+      "sourceLanguages": [
+        "auto",
+        "1600+"
+      ],
       "targetLanguage": null,
       "version": "2026-08-03-int8",
       "downloadUrl": "https://github.com/Jensen-Yao/RTT/releases/download/models-v0.2.6/omnilingual-300m-int8.zip",
@@ -180,14 +281,31 @@
       "officialPage": "https://huggingface.co/OpenVoiceOS/omnilingual-asr-ctc-300m-onnx",
       "recommendedPlatform": "both",
       "displayName": "Omnilingual CTC 300M INT8",
-      "description": "内置 1600+ 语言扩展识别；无语义标点时使用规则分句"
+      "description": "内置 1600+ 语言扩展识别；无语义标点时使用规则分句",
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "VERIFIED",
+        "web": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Windows fixture inference passed on 2026-08-10; Android emulator inference passed, while physical-device and browser acceptance are still pending."
+      ]
     },
     {
       "id": "qwen3-asr-0.6b-int8",
       "kind": "asr",
       "engine": "sherpa-onnx-qwen3-asr",
       "sourceLanguage": "auto",
-      "sourceLanguages": ["auto", "en", "zh", "ja", "ko", "vi", "yue"],
+      "sourceLanguages": [
+        "auto",
+        "en",
+        "zh",
+        "ja",
+        "ko",
+        "vi",
+        "yue"
+      ],
       "targetLanguage": null,
       "version": "2026-03-25-int8",
       "downloadUrl": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-qwen3-asr-0.6B-int8-2026-03-25.tar.bz2",
@@ -199,7 +317,15 @@
       "recommendedPlatform": "both",
       "displayName": "Qwen3-ASR 0.6B INT8",
       "description": "多语高准确率识别；约 879 MB，适合大内存 Android 与 Windows；不内置 APK",
-      "archiveFormat": "tar.bz2"
+      "archiveFormat": "tar.bz2",
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE",
+        "windows": "UNAVAILABLE"
+      },
+      "knownIssues": [
+        "Android requires a high-memory device; the Windows native adapter is not complete."
+      ]
     },
     {
       "id": "punctuation-en",
@@ -214,7 +340,14 @@
       "license": "Apache-2.0",
       "minimumRuntime": "sherpa-onnx 1.13.4; Android 10+",
       "officialPage": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/punctuation-models",
-      "recommendedPlatform": "android"
+      "recommendedPlatform": "android",
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Only the Android sherpa-onnx adapter is implemented; device inference is pending."
+      ]
     },
     {
       "id": "bergamot-en-zh",
@@ -229,14 +362,23 @@
       "license": "MPL-2.0",
       "minimumRuntime": "BergamotTranslatorSharp 0.5.1; Windows x64",
       "officialPage": "https://github.com/mozilla/bergamot-translator",
-      "recommendedPlatform": "windows"
+      "recommendedPlatform": "windows",
+      "verifiedStatus": "VERIFIED",
+      "verifiedPlatforms": {
+        "windows": "VERIFIED"
+      },
+      "knownIssues": [
+        "Windows English-to-Chinese text inference passed on 2026-08-10."
+      ]
     },
     {
       "id": "marian-en-zh-int8",
       "kind": "translation",
       "engine": "marian-onnx",
       "sourceLanguage": "en",
-      "sourceLanguages": ["en"],
+      "sourceLanguages": [
+        "en"
+      ],
       "targetLanguage": "zh-CN",
       "version": "opus-mt-en-zh-onnx-int8-2026-08",
       "downloadUrl": "https://github.com/Jensen-Yao/RTT/releases/download/models-v0.2.6/marian-en-zh-int8.zip",
@@ -247,7 +389,14 @@
       "officialPage": "https://huggingface.co/Helsinki-NLP/opus-mt-en-zh",
       "recommendedPlatform": "android",
       "displayName": "OPUS-MT 英语到中文 INT8",
-      "description": "本地 Marian ONNX 翻译；比 ML Kit 更适合英语电影对白，首次下载后完全离线"
+      "description": "本地 Marian ONNX 翻译；比 ML Kit 更适合英语电影对白，首次下载后完全离线",
+      "verifiedStatus": "CANDIDATE",
+      "verifiedPlatforms": {
+        "android": "CANDIDATE"
+      },
+      "knownIssues": [
+        "Android runtime exists, but device inference and quality acceptance are pending."
+      ]
     },
     {
       "id": "bergamot-ja-en",
@@ -262,7 +411,14 @@
       "license": "MPL-2.0",
       "minimumRuntime": "BergamotTranslatorSharp 0.5.1; Windows x64; requires bergamot-en-zh for Japanese to Chinese",
       "officialPage": "https://github.com/mozilla/bergamot-translator",
-      "recommendedPlatform": "windows"
+      "recommendedPlatform": "windows",
+      "verifiedStatus": "VERIFIED",
+      "verifiedPlatforms": {
+        "windows": "VERIFIED"
+      },
+      "knownIssues": [
+        "Windows Japanese-to-Chinese pivot inference passed on 2026-08-10; the route requires both Bergamot packages."
+      ]
     }
   ],
   "releasePolicy": "Production entries require a verified HTTPS source, SHA-256 checksum, exact byte size, and reviewed model license."
