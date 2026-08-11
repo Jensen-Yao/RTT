@@ -1,0 +1,129 @@
+# RTT 使用指南
+
+RTT 为 Android 10+ 与 Windows 10 2004+ x64 提供实时原文和简体中文字幕。Android 可选择语音、画面字幕 OCR 或二者同时启用；SenseVoice 支持英语、日语、韩语，云端固定语言还可选择更多语言。Windows 本地模式首版仍以英语、日语为主。RTT 不是视频播放器，不处理字幕文件编辑或口型同步。
+
+在线账户、邮箱验证、GitHub 登录、双域名回调和 Supabase RLS 的部署说明见 [RTT 在线账户部署](ONLINE_AUTH.md)。三端都要求有效的 Supabase 会话，不提供本机离线账户。
+
+## 安装
+
+### Android
+
+1. 从 GitHub Release 下载 `RTT-<版本>-android-universal.apk` 和 `SHA256SUMS.txt`。
+2. 校验 APK 的 SHA-256 后允许当前文件管理器安装未知应用。
+3. 首次启动时授予通知、悬浮窗和录音权限；使用设备内部音频时还需授予系统音频捕获权限。
+4. APK 已内置英语 Vosk、日语 Vosk、由 sherpa-onnx 提供的 SenseVoice INT8 运行包和英语语义标点 INT8 模型。SenseVoice 运行包是从上游 Hugging Face 模型转换后的可运行发行包，不是原始 Transformers 权重。首次启动会离线启用英语识别与标点，另外两套识别模型可在“模型”页启用，均不需要网络。ML Kit 翻译模型不能打入 APK，可在同一页面提前下载并确认“可离线翻译”。
+
+内置模型使 Android Release APK 约为 490 MB；同时启用三套识别模型和英语标点还需要约 416 MB 私有存储空间。安装和升级前建议至少预留 1.2 GB，避免系统在解压期间因空间不足中止。
+
+Android 模型存储在手机的 RTT 私有应用目录，不会写入 Windows 的 C 盘。卸载应用会同时删除这些模型。
+
+### Windows
+
+下载并校验安装程序或便携包。没有 Authenticode 签名的测试版本可能触发 SmartScreen；此时必须先核对发布页和 SHA-256。便携包解压后运行 `RTT.Windows.exe`。
+
+本仓库开发环境默认把模型放在 `F:\RTT\models\downloads`。也可在启动前设置：
+
+```powershell
+$env:RTT_MODELS_ROOT = 'F:\RTT\models\downloads'
+```
+
+不要把模型解压到 `C:\Users\...`。模型管理器支持断点续传、文件大小与 SHA-256 校验、更新覆盖和删除。Windows 开发环境可执行 `.\scripts\download-install-verify-models.ps1 -RunWindowsInference`，直接把首批模型安装到 `F:\RTT\models\downloads` 并生成 `artifacts/model-install-verification.json`；报告会区分“真实推理通过”和“仅布局验证”。
+
+## 权限与捕获
+
+Android 可在开始前选择 `语音`、`画面字幕` 或 `同时启用`。设备内部音频使用 `MediaProjection + AudioPlaybackCapture`，麦克风使用系统语音识别音源；画面字幕模式使用同一次 `MediaProjection` 在内存中读取降采样画面，只裁剪屏幕底部可调区域并调用设备端 ML Kit OCR。帧不会写入磁盘或上传，识别完成后立即释放。
+
+画面字幕模式适合视频本身已经带有英语、日语或韩语原文字幕的情况。可配置底部识别区域为屏幕高度的 18%–55%、扫描速度和连续 1–3 帧稳定判断。连续相同文本会去重，播放器控制栏、弹幕和水印仍可能造成干扰。DRM/FLAG_SECURE 内容可能返回黑屏或禁止投影，RTT 不会绕过这一限制。
+
+目标 Android 应用必须允许音频播放捕获。DRM 视频、受保护音频或明确禁止捕获的应用无法绕过，RTT 会停止会话并显示捕获不可用状态。
+
+Android 通话音频通常使用受保护的 `USAGE_VOICE_COMMUNICATION`，不能由 `AudioPlaybackCapture` 读取。语音聊天可切换到“麦克风”并使用扬声器播放远端声音；使用耳机时，远端声音不会进入手机麦克风。RTT 首版只把所选外语翻译成简体中文，不提供双向通话同传或把译文注入通话上行音轨。
+
+Windows 使用 WASAPI loopback 捕获默认播放设备。切换默认设备、拔插耳机、休眠恢复或播放器退出后，如果音频电平不再变化，请停止并重新开始会话。首版的进程级捕获仍属于实验能力，可靠模式为默认输出设备捕获。
+
+## 识别模式
+
+- `极速 Vosk`：模型页可按语言下载并选择中文、英语、日语、韩语、西班牙语、法语、德语和俄语小模型；流式局部原文最快出现，适合低功耗设备。
+- `准确 SenseVoice`：按语音片段识别，支持英语、日语、韩语或自动检测；延迟较高但对电影对白更稳。
+- `云端高精度`：把音频片段发送给单独选择的语音识别供应商。固定源语言可选英、日、韩、西、法、德、意、葡、俄、阿拉伯、印地、泰、越南和印度尼西亚语，实际可用范围仍由供应商模型决定。DeepSeek 只用于文本翻译，但可与本地 Vosk/SenseVoice 或 OpenAI、DashScope、Groq 识别组合。
+
+Android Release APK 内的三套识别包和英语标点模型在构建时已经校验固定大小、SHA-256 和必需文件；其中 SenseVoice 的可下载包来自 sherpa-onnx 的 ASR 模型发布页。手机启用模型时会再次校验并在临时目录解压或原子复制；中断不会覆盖已安装的可用模型。SenseVoice 包较大，首次启用需要等待解压完成并保证足够存储空间。
+
+英语使用 VAD、语义标点和约 0.8 秒动态静音联合判断边界；日语、韩语及其他没有已验证标点模型的语言会明确降级为 VAD/识别器标点。所有模式都锁定稳定前缀、只刷新尾部；超过 8 秒的长句优先在逗号处分割。语义仍不完整时短暂等待下一段，随后使用超时保护固化，避免字幕永久悬而未决。
+
+局部识别结果会被后续 revision 修订。翻译任务在新 revision 到达时取消，晚返回的旧翻译不会覆盖当前字幕；最终结果一旦固化就按时间顺序显示。云端翻译会携带最近两句原文帮助消歧，但提示词要求只翻译当前句。
+
+## 本地与云端翻译
+
+Android 本地翻译可选择 ML Kit 的 14 种设备端语言包，或已验证的 OPUS-MT 英语到中文 INT8 模型。Windows 英语使用 Bergamot `en-zh`；日语使用 `ja-en -> en-zh` 两阶段翻译。模型安装完成后，本地模式不会隐式访问云端。
+
+识别与翻译供应商独立选择。例如可使用 `SenseVoice + DeepSeek`，也可使用 `DashScope ASR + DeepSeek`。自定义兼容服务需声明“仅文字”或“文字 + 语音”能力，RTT 会在请求权限前检查模型、能力和对应密钥。
+
+内置云端供应商：
+
+- OpenAI：识别、翻译和配音能力按配置启用。
+- DeepSeek：仅文本翻译。
+- 阿里云 DashScope：通过公共 OpenAI Compatible 地址提供配置支持。
+- 阿里云百炼专属域名：OpenAI Compatible 与 Anthropic 分为独立槽位，不再内置任何用户的示例域名。必须把与当前 API Key 配套的专属推理域名填入同一槽位。
+- 硅基流动 SiliconFlow、Agnes AI、月之暗面 Moonshot、智谱 BigModel、火山方舟、302.AI。
+- Anthropic、Gemini、OpenRouter：仅文本翻译。
+- Groq：OpenAI 兼容文本翻译与音频转写。
+- Together AI、xAI、Mistral AI、NVIDIA NIM、Cerebras、SambaNova。
+- 自定义服务：选择 OpenAI 或 Anthropic 协议；只有 OpenAI 兼容端点可声明“文字 + 语音”。
+
+Android 的每个供应商槽把 API 基础地址、协议、翻译模型、语音模型和加密密钥绑定在一起。点击“获取上游模型”会调用该基础地址的模型列表接口，缓存模型名并提供可筛选选择框；不标准或未列出的模型仍可手动输入。`/models` 不能可靠声明音频能力，因此可配置端点仍需由用户明确选择“仅文字”或“文字 + 语音”。
+
+“本次运行链路”和“供应商”页会显示 ASR 与翻译各自的供应商、模型、协议、端点域名、凭据槽、保存状态及不可逆的六位密钥指纹。保存、删除和测试都针对屏幕上明确标出的槽位；指纹只用于区分已保存密钥，不会显示密钥正文。
+
+API 密钥会保留在 Android Keystore 或 Windows Credential Locker，并以 AES-256-GCM 密文同步到当前 Supabase 账户，不会写入设置文件、诊断日志或截图。Android 断网保存或删除时会记录不含明文的待同步操作，恢复登录和网络后自动补传。连接测试只发送固定测试句，不发送正在播放的字幕。
+
+## 字幕显示
+
+Android 可在开始前调整悬浮字幕字号（80%–150%）、窗口宽度（60%–100%）、背景不透明度（60%–100%），并决定是否显示原文。字幕窗运行时可单指拖动，设置在下次会话继续生效。画面 OCR 启用时悬浮窗默认置顶，并限制在 OCR 区域上方，避免遮挡视频原字幕或再次识别 RTT 自己的文字。Windows 可在“字幕”页调整字号、不透明度和原文显示，也可直接拖动或拉伸字幕窗。较窄窗口会自动换行，不会通过缩小字体挤压最长单词。
+
+Android 的“全文”页在内存中保留本次会话最多 300 段原文、译文、来源和处理状态。云端译文晚于下一句返回时会更新原来的段落，不会重新覆盖当前悬浮字幕；停止后仍可查看，开始新会话或手动清空时删除，不写入文件。
+
+## 中文配音
+
+- `关闭`：只显示双语字幕。
+- `叠加`：保留原声并播放简体中文 TTS。
+- `压低原声`：请求系统暂时压低其他播放会话；设备不支持时提示并退化为叠加。
+
+Windows 优先选择已安装的 `zh-CN` 系统语音，Android 使用设备 TTS 中文语音。配音是译文确定后的延迟播报，不是同步电影音轨。队列只保留最新两句或最近六秒内内容，过期句子会被丢弃，避免延迟持续累积。
+
+## Android 后台运行
+
+`CaptionService` 是 Android 前台服务，由 `startForegroundService` 启动。内部音频或画面 OCR 会声明 `mediaProjection` 类型，麦克风模式会声明 `microphone` 类型，同时启用时组合所需类型。服务持有捕获、OCR/ASR、翻译、TTS 和悬浮字幕，因此关闭 RTT Activity 后字幕仍可继续。系统要求持续显示低优先级通知，此通知不能隐藏；点击通知中的“停止”会向服务发送 `ACTION_STOP`。
+
+MediaProjection 被系统或用户回收时，callback 会停止捕获和字幕会话。部分厂商的省电策略仍可能终止前台服务，可在系统设置中允许 RTT 后台活动并取消电池优化，但这不能保证绝对常驻。手机重启后必须重新打开 RTT，并由用户再次授权 MediaProjection；应用不能静默恢复该授权。
+
+## 隐私
+
+- 不收集遥测。
+- 诊断日志默认关闭。
+- 日志不得包含音频、字幕正文或 API 密钥。
+- 本地模式的识别、翻译和平台 TTS 不上传内容。
+- 切换云端模式前界面会显示供应商和上传能力；云端失败可停止后切回本地模式。
+
+## 故障排查
+
+`没有音频电平`：提高目标应用音量，确认音频正从所选输出设备播放；Android 还需确认目标应用允许捕获。
+
+`无法开始`：RTT 会保留具体原因，不再将其覆盖为“已停止”。按提示检查模型、供应商能力、对应 API 密钥或系统权限。
+
+`模型校验失败`：Android 内置模型请在“模型”页删除后重新启用；中断产生的临时目录不会被当成已安装模型。Windows 下载可保留 `.part` 后重试。不要使用来源不明或自行改名的模型包。
+
+`本地翻译不可用`：Android 到“模型 → 本地翻译模型”下载对应语言包并确认“可离线翻译”；开始前会检查语言包，避免运行中才失败。Windows 日语必须同时安装 `bergamot-ja-en` 和 `bergamot-en-zh`。
+
+`悬浮字幕不显示`：检查“显示在其他应用上层”权限；部分全屏 DRM 播放器会主动遮挡第三方 overlay。
+
+`配音被再次识别`：Windows 在 TTS 播放期间会抑制回环识别；Android 依赖播放捕获策略。建议使用耳机并选择叠加模式验证。
+
+## 发布文件校验
+
+```powershell
+(Get-FileHash .\RTT-0.2.0-windows-x64-portable.zip -Algorithm SHA256).Hash.ToLowerInvariant()
+(Get-FileHash .\RTT-0.2.0-android-universal.apk -Algorithm SHA256).Hash.ToLowerInvariant()
+```
+
+输出必须与同一 Release 的 `SHA256SUMS.txt` 完全一致。模型包也必须匹配 `models/catalog.json` 中的大小、SHA-256 和许可证。

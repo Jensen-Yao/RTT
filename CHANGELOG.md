@@ -6,6 +6,7 @@
 - Keep real-time captions as the primary product surface while completing the professional translator, model discovery, local runtimes, capability routes, and unified release validation.
 - Keep complete source code in the private `Jensen-Yao/RTT-test` repository; the public `RTT` repository remains distribution-only.
 - Add a repeatable F-drive model install and verification command. Downloadable entries now expose an install action, while the report distinguishes checksum/layout installation from real runtime inference.
+- Upgrade SharpCompress to 0.50.4 and adapt archive loading to the current API so clean Windows release builds pass NuGet vulnerability auditing.
 
 ## [0.2.8] - 2026-08-10
 
