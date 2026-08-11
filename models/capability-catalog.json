@@ -189,10 +189,10 @@
       "verifiedStatus": "CANDIDATE",
       "verifiedPlatforms": {
         "android": "CANDIDATE",
-        "windows": "CANDIDATE"
+        "windows": "VERIFIED"
       },
       "knownIssues": [
-        "RTT v0.3.0 real inference acceptance is pending for the listed platforms."
+        "Windows x64 real inference passed on 2026-08-11; Android physical-device acceptance remains pending."
       ]
     },
     {
@@ -236,10 +236,10 @@
       "verifiedStatus": "CANDIDATE",
       "verifiedPlatforms": {
         "android": "CANDIDATE",
-        "windows": "CANDIDATE"
+        "windows": "VERIFIED"
       },
       "knownIssues": [
-        "RTT v0.3.0 real inference acceptance is pending for the listed platforms."
+        "Windows x64 real inference passed on 2026-08-11; Android physical-device acceptance remains pending."
       ]
     },
     {
@@ -283,10 +283,10 @@
       "verifiedStatus": "CANDIDATE",
       "verifiedPlatforms": {
         "android": "CANDIDATE",
-        "windows": "CANDIDATE"
+        "windows": "VERIFIED"
       },
       "knownIssues": [
-        "RTT v0.3.0 real inference acceptance is pending for the listed platforms."
+        "Windows x64 real inference passed on 2026-08-11; Android physical-device acceptance remains pending."
       ]
     },
     {
@@ -330,10 +330,10 @@
       "verifiedStatus": "CANDIDATE",
       "verifiedPlatforms": {
         "android": "CANDIDATE",
-        "windows": "CANDIDATE"
+        "windows": "VERIFIED"
       },
       "knownIssues": [
-        "RTT v0.3.0 real inference acceptance is pending for the listed platforms."
+        "Windows x64 real inference passed on 2026-08-11; Android physical-device acceptance remains pending."
       ]
     },
     {
@@ -377,10 +377,10 @@
       "verifiedStatus": "CANDIDATE",
       "verifiedPlatforms": {
         "android": "CANDIDATE",
-        "windows": "CANDIDATE"
+        "windows": "VERIFIED"
       },
       "knownIssues": [
-        "RTT v0.3.0 real inference acceptance is pending for the listed platforms."
+        "Windows x64 real inference passed on 2026-08-11; Android physical-device acceptance remains pending."
       ]
     },
     {
