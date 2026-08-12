@@ -1,4 +1,4 @@
-const CACHE = 'rtt-web-v0.3.0-r2';
+const CACHE = 'rtt-web-v0.3.0-r3';
 const LOCAL_MODEL_MARKER = '/__rtt-local-models/';
 const LOCAL_MODEL_DB = 'rtt-web-local-models';
 const LOCAL_MODEL_STORE = 'resources';
