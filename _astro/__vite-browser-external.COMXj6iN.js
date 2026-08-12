@@ -1,0 +1,1 @@
+import{b as e}from"./translation.CGluRyC0.js";var t=e(((e,t)=>{t.exports={}}));export default t();
