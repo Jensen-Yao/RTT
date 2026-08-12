@@ -1,2 +1,6 @@
 User-agent: *
 Allow: /
+
+# Canonical sitemap for the RTT production site. The .cn mirror serves the
+# same public content and intentionally points crawlers to this URL set.
+Sitemap: https://rtt.jenseny.top/sitemap.xml
