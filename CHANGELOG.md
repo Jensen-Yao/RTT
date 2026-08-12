@@ -1,6 +1,14 @@
 # Changelog
 
-## [0.3.0] - Unreleased
+## [0.3.0] - 2026-08-12
+
+- Added real Android Piper/sherpa-onnx TTS routing, playback queue integration, runtime validation, and R8 entry-point verification.
+- Completed Android image OCR, ASS translation, video subtitle export, and file-task preview, save, open, retry, and delete workflows.
+- Added actionable model-runtime guidance with official download links while keeping unsupported imports non-runnable until real inference succeeds.
+- Localized Android startup validation, foreground caption status, permissions, and dynamic runtime/service errors for Chinese and English.
+- Verified 77 Android Debug and 73 Release unit tests, lint, Debug/Release/R8 builds, 34 Windows tests with real local model inference, and the 17-page Web/PWA build.
+- Packaged and smoke-tested the Windows x64 installer and portable build, including normal application shutdown and second-instance activation.
+- Verified the anonymous browser translator, mandatory account gate, Chinese and English workspaces, screen-sharing entry, and independent floating caption window; mobile Lighthouse accessibility, best-practices, and SEO scores reached 100.
 
 - Consolidate the unreleased 0.2.8 and 0.2.9 work into one cross-platform release baseline.
 - Keep real-time captions as the primary product surface while completing the professional translator, model discovery, local runtimes, capability routes, and unified release validation.

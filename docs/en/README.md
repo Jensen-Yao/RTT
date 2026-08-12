@@ -1,6 +1,6 @@
 # RTT User Guide
 
-RTT provides live source captions and Simplified Chinese translations on Android 10+ and Windows 10 version 2004+ x64. Android can use speech, on-device screen-subtitle OCR, or both at once. SenseVoice supports English, Japanese, and Korean, while cloud coverage depends on the selected model. Windows local mode currently focuses on English and Japanese. RTT is not a video player and does not provide subtitle-file editing or lip synchronization.
+RTT provides live source captions and Simplified Chinese translations on Android 10+ and Windows 10 version 2004+ x64. Android can use speech, on-device screen-subtitle OCR, or both at once. The professional translator can also create timed translated subtitles from a video audio track. RTT is not a video player, does not alter the original video, and does not provide lip synchronization.
 
 See [online account deployment](ONLINE_AUTH.md) for email verification, GitHub login, redirect URLs, and Supabase RLS. All clients require a valid Supabase session and do not provide device-local accounts.
 
@@ -66,6 +66,12 @@ Each provider slot binds its base URL, protocol, translation model, optional ASR
 
 Android shows the ASR and translation provider, model, protocol, endpoint host, credential slot, saved state, and a non-reversible six-character key fingerprint on both the provider screen and active route summary. Save, delete, and test operations name the exact slot they affect. Keys retain an Android Keystore or Windows Credential Locker copy and synchronize to the signed-in Supabase account as AES-256-GCM ciphertext; they are never written to settings, logs, or screenshots. Android persists secret-free pending operations while offline and retries them after the session and network recover.
 
+## Video to subtitles
+
+Choose a local video under `Translation desk → Video`. RTT extracts its audio, converts it to 16 kHz mono PCM, detects speech ranges, runs the active ASR route, and translates each timed segment. Jobs export `SRT`, `VTT`, `ASS`, or `TXT`, with either translated-only or bilingual cues. The queue shows decoding, transcription, translation, and output stages, followed by a preview and download action.
+
+With local ASR, the video, audio, transcript, and translation stay on the device. Cloud ASR requires explicit consent and receives only segmented audio, never video frames; the selected text translation API then receives recognized subtitle text. Android uses an automatically deleted temporary PCM file for long videos, and switching screens does not cancel the job. Windows decodes through Media Foundation: MP4, MOV, M4V, and AVI are commonly available, while MKV/WebM support depends on installed system codecs.
+
 ## Caption display
 
 Before starting an Android session, the overlay can be configured for text scale (80%–150%), width (60%–100%), background opacity (60%–100%), and source-caption visibility. With screen OCR enabled, the overlay starts at the top and cannot be dragged into the OCR crop, preventing it from covering source subtitles or recognizing its own text. Windows exposes font size, opacity, and source-caption visibility on the Captions tab; its overlay can also be dragged or resized directly. These settings persist for future sessions. Narrow overlays wrap text instead of shrinking long words into unreadable type.
@@ -84,7 +90,7 @@ The service stops when MediaProjection is revoked. Vendor power management can s
 
 ## Privacy and limitations
 
-RTT collects no telemetry. Diagnostics are off by default and must not contain audio, caption text, or API keys. Local mode uploads nothing. Cloud mode identifies the selected provider before content is sent.
+RTT collects no telemetry. Diagnostics are off by default and must not contain audio, caption text, or API keys. Local mode uploads nothing. Cloud mode identifies the selected provider before content is sent. Video jobs upload segmented audio only after explicit cloud-ASR consent, and never upload video frames.
 
 DRM playback, apps that prohibit capture, vendor overlay restrictions, and unavailable audio-ducking APIs are platform boundaries rather than conditions RTT can bypass.
 

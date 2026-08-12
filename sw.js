@@ -3,7 +3,7 @@ const LOCAL_MODEL_MARKER = '/__rtt-local-models/';
 const LOCAL_MODEL_DB = 'rtt-web-local-models';
 const LOCAL_MODEL_STORE = 'resources';
 const scopeUrl = new URL('./', self.registration.scope);
-const shell = ['./', './app/', './models/', './manifest.webmanifest', './favicon.png', './icon-512.png']
+const shell = ['./', './app/', './models/', './manifest.webmanifest', './favicon.png', './icon-192.png', './icon-512.png']
   .map((path) => new URL(path, scopeUrl).toString());
 
 self.addEventListener('install', (event) => {
